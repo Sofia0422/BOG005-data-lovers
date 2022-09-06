@@ -98,7 +98,7 @@ const filtroxRol = [
 ];
 
 //Variable para test buscar
-const buscarCampeon = [  
+ const buscarCampeon = [  
   {
     name: 'Ahri',
   },
@@ -106,7 +106,7 @@ const buscarCampeon = [
     name: 'Akali',
   },
   
-];
+]; 
 
 //Variable para test calculo
 const calculoEstadistica = [
@@ -175,8 +175,8 @@ describe('buscarNombre', () => {
     expect(typeof buscarNombre).toBe('function');
   });
 
-  it('devolver el filtro de campeón por la primera letra a', () => {    
-    expect(buscarNombre(infoNombre, 'a')).toEqual(buscarCampeon);
+  it('devolver el filtro de campeón cuyo nombre inicie con la letra z', () => {    
+    expect(buscarNombre(buscarCampeon, 'z')).toEqual([]);
   });
 }); 
 

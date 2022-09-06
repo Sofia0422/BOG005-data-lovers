@@ -11,7 +11,6 @@ import {
 } from './data.js';
 
  const dataLol = (lol.data);
- const arrayCampeones = Object.values(dataLol);
 
 
  //Declaramos las variables - Manipulación dinamica del DOM
@@ -26,7 +25,7 @@ const showData = (parametro) => {
   const campeones = `
   <div class="champ" data-id=${element.id} name="champion">
   <img src = ${element.splash} data-id=${element.id} class="splash"/>
-  <h1 class= "championsName" data-id=${element.id} >${element.id} </h1>
+  <h1 class= "championsName" data-id=${element.id}>${element.id} </h1>
   </div>
   `;
   show += campeones;
@@ -110,10 +109,10 @@ const cleanContainer = () => {
 };
 
 search.addEventListener('keyup', (event) => {
-  const term = event.target.value.toLowerCase();
-  const filterChampions = buscarNombre (data, term);
+  const palabrasDigitadas = event.target.value.toLowerCase();
+  const campeonEncontrado = buscarNombre (data, palabrasDigitadas);
   cleanContainer();
-  showData(filterChampions);
+  showData(campeonEncontrado);
 });
 
 //Funcionalidad Nav Bar
@@ -179,8 +178,8 @@ tank.addEventListener('click', () => {
 //Realizar Calculo
 
 const attackChampion = document.querySelector("#attackChampion");
-attackChampion.innerHTML = ` Daño de ataque promedio: "${calculoEstadistico (arrayCampeones, "attackdamage")}"`;
+attackChampion.innerHTML = ` Daño de ataque promedio: "${calculoEstadistico (data, "attackdamage")}"`;
 const spellBlock = document.querySelector("#spellBlock");
-spellBlock.innerHTML = ` Bloque de Hechizos: "${calculoEstadistico (arrayCampeones, "spellblock")}`;
+spellBlock.innerHTML = ` Bloque de Hechizos: "${calculoEstadistico (data, "spellblock")}`;
 const attackspeedperlevel = document.querySelector("#attackspeedperlevel");
-attackspeedperlevel.innerHTML = ` Velocidad de ataque por nivel: "${calculoEstadistico (arrayCampeones, "attackspeedperlevel")}`;
+attackspeedperlevel.innerHTML = ` Velocidad de ataque por nivel: "${calculoEstadistico (data, "attackspeedperlevel")}`;

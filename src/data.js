@@ -47,7 +47,7 @@ export const calculoEstadistico = (data, caracteristicas) => {
   switch (caracteristicas) {
     case 'attackdamage':
       elementos = data.map((campeones) => campeones.stats);
-      resultado = (elementos.reduce((acumulador, valorActual) => (acumulador+ valorActual.attackdamage), 0) / 134).toFixed(2);
+      resultado = (elementos.reduce((acumulador, valorActual) => (acumulador + valorActual.attackdamage), 0) / 134).toFixed(2);
       break;
     case 'spellblock':
       elementos = data.map((campeones) => campeones.stats);
@@ -62,25 +62,3 @@ export const calculoEstadistico = (data, caracteristicas) => {
   return resultado; 
 };
 
-/* const infoNombre = [
-  {
-    name: 'Ahri',
-  },
-  {
-    name: 'Akali',
-  },
-  {
-    name: 'Nunu',
-  },
-  {
-    name: 'Zac',
-  },
-  {
-    name: 'Diana',
-  },
-];
-
-console.log(buscarNombre(infoNombre, 'd')); // [Diana]
-console.log(buscarNombre(infoNombre, 'ac')); // [Zac]
-console.log(buscarNombre(infoNombre, 'a')); // [Ahri, Akali, Zac, Diana]
-console.log(buscarNombre(infoNombre, 'A')); // [Ahri, Akali, Zac, Diana] */

@@ -45,6 +45,7 @@ nav {
   background-color: #294674;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 
@@ -534,15 +535,6 @@ background-color: rgba(0, 0, 0, 0.6);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.adelante, .crit {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 
 .card2 {
   background-image: url(img/card2.png);
@@ -550,17 +542,6 @@ background-color: rgba(0, 0, 0, 0.6);
   background-position: center;
 }
 
-.crit {
-  transform: rotateY(180deg);
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 
 .card3 {
   background-image: url(img/card3.png);
